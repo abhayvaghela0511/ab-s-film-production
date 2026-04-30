@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playwrite_AR, Lobster_Two, Cabin, Style_Script, Prata } from "next/font/google";
 // import { Playwrite_AR } from "next/font/google"; "next/font/local"
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -79,6 +80,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${Playwrite_AR_Font.variable} ${Lobster_Two_Font.variable} ${Cabin_Font.variable} ${prataFont.variable} h-full antialiased`}
     >
+      <Analytics />
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
